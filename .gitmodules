@@ -1,0 +1,3 @@
+[submodule "noobot"]
+	path = noobot
+	url = https://github.com/Conroman16/noobot.git
