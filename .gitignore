@@ -1,5 +1,9 @@
-# Ignore submodules
+# Submodules
 noobot/
+
+# App-specific config files
+noobotconfig.json
+
 
 #####
 
