@@ -7,6 +7,7 @@ using Noobot.Core.DependencyResolution;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using TheBot.Configuration;
 using TheBot.Logging;
 
 namespace TheBot
@@ -37,7 +38,7 @@ namespace TheBot
         private static async Task RunNoobot()
         {
             var containerFactory = new ContainerFactory(
-                new ConfigurationBase(),
+                new NoobotConfiguration(),
                 new JsonConfigReader(_noobotConfigFilePath),
                 GetLogger());
 
