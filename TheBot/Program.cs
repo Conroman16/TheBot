@@ -15,6 +15,7 @@ namespace TheBot
     {
         private static INoobotCore _noobotCore;
         private static readonly ManualResetEvent _quitEvent = new ManualResetEvent(false);
+        private const string _noobotConfigFilePath = @"noobotconfig.json";
 
         public static void Main(string[] args)
         {
@@ -37,7 +38,7 @@ namespace TheBot
         {
             var containerFactory = new ContainerFactory(
                 new ConfigurationBase(),
-                new JsonConfigReader(@"noobotconfig.json"),
+                new JsonConfigReader(_noobotConfigFilePath),
                 GetLogger());
 
             INoobotContainer container = containerFactory.CreateContainer();
