@@ -38,7 +38,7 @@ namespace TheBot
         private static async Task RunNoobot()
         {
             var containerFactory = new ContainerFactory(
-                new NoobotConfiguration(),
+                new MiddlewareConfiguration(),
                 new JsonConfigReader(_noobotConfigFilePath),
                 GetLogger());
 
