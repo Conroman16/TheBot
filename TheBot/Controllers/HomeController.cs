@@ -12,7 +12,7 @@ namespace TheBot.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return View("Landing");
         }
 
         public IActionResult Error()
