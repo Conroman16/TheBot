@@ -1,0 +1,7 @@
+﻿body {
+    background-color: #212121;
+}
+.cover-image img {
+    position: absolute;
+    left: calc(50% - 300px);
+}
