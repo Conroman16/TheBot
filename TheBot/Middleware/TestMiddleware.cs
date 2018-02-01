@@ -1,4 +1,5 @@
-﻿using Noobot.Core.MessagingPipeline.Middleware;
+﻿using Newtonsoft.Json;
+using Noobot.Core.MessagingPipeline.Middleware;
 using Noobot.Core.MessagingPipeline.Middleware.ValidHandles;
 using Noobot.Core.MessagingPipeline.Request;
 using Noobot.Core.MessagingPipeline.Response;
@@ -24,7 +25,8 @@ namespace TheBot.Middleware
 
         private IEnumerable<ResponseMessage> TestHandler(IncomingMessage message, IValidHandle matchedHandle)
         {
-            yield return message.ReplyDirectlyToUser("Message received!");
+            yield return message.ReplyToChannel($"Message received!\n\n{JsonConvert.SerializeObject(message, Formatting.Indented)}");
+            yield return message.ReplyDirectlyToUser($"Message received!\n\n{JsonConvert.SerializeObject(message, Formatting.Indented)}");
         }
     }
 }
